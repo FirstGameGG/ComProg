@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://elab.cpe.ku.ac.th/elab/lab/1248/14874/ -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Computer Programming | C 113 Lab 7 String | E-Labsheet</title>
+
+
+
+
+<script type="text/javascript" src="./06 - ถักอักขระ (1) (blank)_files/jquery-3.3.1.min.js.download"></script>
+<script type="text/javascript" src="./06 - ถักอักขระ (1) (blank)_files/jquery-ui.min.js.download"></script>
+<script type="text/javascript" src="./06 - ถักอักขระ (1) (blank)_files/jquery.are-you-sure.js.download"></script>
+<script type="text/javascript" src="./06 - ถักอักขระ (1) (blank)_files/csrf.js.download"></script>
+<script type="text/javascript" src="./06 - ถักอักขระ (1) (blank)_files/reverse.js.download"></script>
+<script type="text/javascript" src="./06 - ถักอักขระ (1) (blank)_files/elab-client.js.download"></script>
+<link type="text/css" rel="stylesheet" href="./06 - ถักอักขระ (1) (blank)_files/jquery-ui.min.css">
+
+<link type="text/css" rel="stylesheet" href="./06 - ถักอักขระ (1) (blank)_files/css-stars.css">
+<script type="text/javascript" src="./06 - ถักอักขระ (1) (blank)_files/jquery.barrating.min.js.download"></script>
+<script type="text/javascript" async="" src="./06 - ถักอักขระ (1) (blank)_files/MathJax.js.download"></script>
+<script type="text/javascript">
+  lab_id = 1886;
+
+  function load_assignment(assignment_id) {
+    $.get(Urls["lab:get-assignment"](1248,14874,assignment_id), 
+          function(data) {
+            $("#assignment").html(data);
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"assignment-body"]);
+            $task_form = $("div#current > form");
+            $task_form.areYouSure();
+          })
+      .fail(function() {
+        alert("This task is currently unavailable");
+        location.reload();
+      });
+  }
+
+  function choose_assignment(assignment_id) {
+    $("#nav-links div.task").removeClass("chosen");
+    $("div#assignment-" + assignment_id).addClass("chosen");
+  }
+
+  function adjust_panels() {
+    var sidebar_width;
+    if ($("#nav-links").is(":visible"))
+      sidebar_width = $("#nav-links").outerWidth();
+    else
+      sidebar_width = 0;
+    var content_width = $(window).width() - sidebar_width;
+    $("#nav-content").width(content_width);
+
+    var toppanel_height = $("#header").height();
+    $("#toggle-sidebar").css("top",toppanel_height);
+  }
+
+  $(document).ready(function() {
+    // add code to each assignment link
+    
+      $("#assignment-13732").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13732);
+          load_assignment(13732);
+        }
+      });
+    
+      $("#assignment-13727").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13727);
+          load_assignment(13727);
+        }
+      });
+    
+      $("#assignment-13728").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13728);
+          load_assignment(13728);
+        }
+      });
+    
+      $("#assignment-13729").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13729);
+          load_assignment(13729);
+        }
+      });
+    
+      $("#assignment-13730").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13730);
+          load_assignment(13730);
+        }
+      });
+    
+      $("#assignment-13731").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13731);
+          load_assignment(13731);
+        }
+      });
+    
+      $("#assignment-13733").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13733);
+          load_assignment(13733);
+        }
+      });
+    
+
+    $("#toggle-sidebar").on("click",function() {
+      $("#nav-links").css("opacity",0);
+      $("#nav-links").toggle("slide",function() {
+        $("#nav-links").css("opacity",1);
+        adjust_panels();
+      });
+    });
+
+    adjust_panels();
+    $(window).resize(adjust_panels);
+  });
+</script>
+
+<link rel="stylesheet" type="text/css" href="./06 - ถักอักขระ (1) (blank)_files/base.css">
+<!-- Goggle Analytics not included because you haven't set the settings.GOOGLE_ANALYTICS_CODE variable! -->
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888; display: contents}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <div id="header">
+        <div class="info">
+          
+<div id="welcome">Welcome <b>ฐิติโชติ กิ่งไพบูลย์</b>
+[1.46.66.252]</div>
+
+          <div id="menu">
+            
+[<a href="https://elab.cpe.ku.ac.th/elab/lab/1248/">All labs</a>]
+
+
+
+
+[<a href="https://elab.cpe.ku.ac.th/elab/kusso/logout/">Log out</a>]
+
+
+
+          </div>
+	</div>
+        <h1>
+            
+
+            <a href="https://elab.cpe.ku.ac.th/elab/">E-Labsheet</a>
+            
+| <a href="https://elab.cpe.ku.ac.th/elab/lab/1248/">Computer Programming</a>
+
+        </h1>
+    </div>
+
+    
+
+
+    <!-- Content -->
+    <div id="content">
+        
+        
+<div id="container">
+  <div id="nav-links">
+  
+    <div id="lab-title" style="padding-bottom: 5px; padding-top: 10px;">
+      <div>
+        Lab 07s:
+      </div>
+      <div>
+        C 113 Lab 7 String
+        
+          <span class="label label-warning">read-only</span>
+        
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13732">
+      <span style="color:blue">01 - นับสระในสายอักขระ</span>
+      <div id="assignment-status-icon-13732" style="display: inline">
+        
+
+  
+    
+      <img src="./06 - ถักอักขระ (1) (blank)_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13727">
+      <span style="color:blue">02 - ลบสระออกจากสายอักขระ</span>
+      <div id="assignment-status-icon-13727" style="display: inline">
+        
+
+  
+    
+      <img src="./06 - ถักอักขระ (1) (blank)_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13728">
+      <span style="color:blue">03 - คัดลอกเพิ่มต่อสายอักขระ</span>
+      <div id="assignment-status-icon-13728" style="display: inline">
+        
+
+  
+    
+      <img src="./06 - ถักอักขระ (1) (blank)_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13729">
+      <span style="color:blue">04 - โซ่คำ (3%)</span>
+      <div id="assignment-status-icon-13729" style="display: inline">
+        
+
+  
+    
+      <img src="./06 - ถักอักขระ (1) (blank)_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13730">
+      <span style="color:blue">05 - ก็อปปี้และเปลี่ยนอักษรใน string เป็นตัวใหญ่</span>
+      <div id="assignment-status-icon-13730" style="display: inline">
+        
+
+  
+    
+      <img src="./06 - ถักอักขระ (1) (blank)_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task chosen" id="assignment-13731">
+      <span style="color:blue">06 - ถักอักขระ (1) (blank)</span>
+      <div id="assignment-status-icon-13731" style="display: inline">
+        
+
+  
+    
+      <img src="./06 - ถักอักขระ (1) (blank)_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13733">
+      <span style="color:blue">07 - เปลี่ยนเลขโรมันให้เป็นเลขอารบิก</span>
+      <div id="assignment-status-icon-13733" style="display: inline">
+        
+
+  
+    
+      <img src="./06 - ถักอักขระ (1) (blank)_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    
+    
+  
+  </div>
+
+  <div id="nav-content" style="display: table-cell; width: 1775px;">
+    <label id="toggle-sidebar" title="Toggle side bar" style="top: 35px;">&lt;|&gt;</label>
+    <div id="assignment">
+
+<div id="assignment-title" style="padding-top: 15px">
+  06 ถักอักขระ (1) (blank) 
+</div>
+<div id="recent-submission-status-13731">
+  
+    
+
+<span style="padding-left:5px">Recent submission on 2:16 02 Feb 2024 
+<img src="./06 - ถักอักขระ (1) (blank)_files/16-arrow-right.png">
+Result: 
+
+  
+    
+      PASSED<img src="./06 - ถักอักขระ (1) (blank)_files/16-em-check.png">
+     
+  
+  
+  
+    <span title="P = Pass, - = Fail, S = Incorrect Spacing, C = Incorrect Case">
+      [PPPPPP]
+    </span>
+    
+      <img class="result-details-icon" style="vertical-align:bottom; cursor: pointer" title="Explain results" src="./06 - ถักอักขระ (1) (blank)_files/16-clipboard-audit.png" onclick="ElabClient.show_result_explanation(this,8092594)">
+    
+  
+
+  
+
+</span><br>
+
+  
+</div>
+<div id="submission-tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+  <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="current" aria-labelledby="ui-id-101" aria-selected="false" aria-expanded="false"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14874/#current" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-101"><span>Current</span></a></li>
+    <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="recent-13731" aria-labelledby="ui-id-102" aria-selected="true" aria-expanded="true"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14874/#recent-13731" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-102"><span>Recent</span></a></li>
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="ui-id-104" aria-labelledby="ui-id-103" aria-selected="false" aria-expanded="false"><a href="https://elab.cpe.ku.ac.th/elab/lab/submissions/1248/13731/" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-103"><span>All</span></a></li>
+  </ul>
+  <div id="current" aria-labelledby="ui-id-101" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+    <form method="post" action="https://elab.cpe.ku.ac.th/elab/lab/submit/1248/14874/13731/" enctype="multipart/form-data" autocomplete="off">
+      <div id="assignment-body">
+        <input type="hidden" name="csrfmiddlewaretoken" value="ICX2v6Vk2n16KYLIsgwyijuCOGfkcwA3AnJY7GgGMI5qVLG5AAvK7u4jTcnjbmMa">
+        <h1>ถักอักขระ (1)</h1><p>จงเติมโค้ดเพื่อให้โปรแกรมสามารถทำงานได้อย่างสมบูรณ์ โดยที่ฟังก์ชัน int charcount(char *s) จะนับจำนวนอักขระที่ปรากฏอยู่ในสายอักษรที่ส่งผ่านเข้ามาในฟังก์ชันตั้งแต่อักขระตัวแรกจนถึงอักขระตัวสุดท้ายก่อนหน้าอักขระนัลล์ (null character)</p><p>ส่วนฟังก์ชัน void charweave(char *s,char *result) จะถักอักขระโดยเก็บผลลัพธ์ของการถักนี้ไว้ในตัวแปร result  การถักอักขระมีลักษณะดังนี้ 
+   สมมติให้ตัวแปร s มีอักขระอยู่ n ตัวและรูปแบบการเรียงของอักขระเป็น C<sub>1</sub>C<sub>2</sub>C<sub>3</sub>C<sub>4</sub>...C<sub>n</sub> ดังนั้นผลลัพธ์ที่ได้จากถักจะมีลักษณะเป็น  C<sub>1</sub>C<sub>n</sub>C<sub>2</sub>C<sub>n-1</sub>C<sub>3</sub>C<sub>n-2</sub>C<sub>4</sub>C<sub>n-3</sub>...C<sub>n-1</sub>C<sub>2</sub>C<sub>n</sub>C<sub>1</sub></p><h2>ตัวอย่างผลลัพธ์</h2><p></p><pre class="output">String: <em>hello, world</em>
+Output: hdellrloow,  ,woolrlledh
+</pre>
+<pre class="output">String: <em>12345</em>
+Output: 1524334251
+</pre>
+<fieldset><pre><div class="code-menu"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14874/#" class="lineno-toggle">[hide line #]</a></div><code class="source"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> charcount(<span class="kt">char</span> <span class="o">*</span>s)
+{
+   <textarea class="codeblank" cols="33" name="b1" rows="4" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+}
+
+<span class="kt">void</span> charweave(<span class="kt">char</span> <span class="o">*</span>s,<span class="kt">char</span> <span class="o">*</span>result)
+{
+<textarea class="codeblank" cols="54" name="b2" rows="15" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+}
+
+<span class="kt">int</span> main()
+{  <span class="kt">char</span> str[<span class="mi">100</span>],result[<span class="mi">200</span>];
+
+   printf(<span class="s">"</span><span class="s">String: </span><span class="s">"</span>);
+   gets(str);   <span class="cm">/* read a line of characters from the input to "str" variable */</span>
+   charweave(str,result);
+   printf(<span class="s">"</span><span class="s">Output: %s</span><span class="se">\n</span><span class="s">"</span>,result);
+   <span class="k">return</span> <span class="mi">0</span>;
+}
+</code></pre></fieldset><p></p> 
+      </div>
+      
+      
+    </form>
+  </div>
+  <div id="recent-13731" class="recent ui-tabs-panel ui-corner-bottom ui-widget-content" aria-labelledby="ui-id-102" role="tabpanel" aria-hidden="false" style="">
+    
+      
+        
+<div id="id_submission_status_8092594" class="submission-status ui-corner-all">
+  Submitted on 2:16 02 Feb 2024 || 
+  Result: 
+
+  
+    
+      PASSED<img src="./06 - ถักอักขระ (1) (blank)_files/16-em-check.png">
+     
+  
+  
+  
+    <span title="P = Pass, - = Fail, S = Incorrect Spacing, C = Incorrect Case">
+      [PPPPPP]
+    </span>
+    
+      <img class="result-details-icon" style="vertical-align:bottom; cursor: pointer" title="Explain results" src="./06 - ถักอักขระ (1) (blank)_files/16-clipboard-audit.png" onclick="ElabClient.show_result_explanation(this,8092594)">
+    
+  
+
+  
+
+
+  <button class="compiler-messages">View compiler messages</button>
+  
+  <button class="copy_to_current" href="" style="display: none;">Copy to current</button>
+
+</div>
+
+  <div class="compiler-message-view" style="display: none;">
+    /home/elab/app/elabsheet/tmp/elab/tmprdr024wc/source.c: In function ‘main’:<br>/home/elab/app/elabsheet/tmp/elab/tmprdr024wc/source.c:29:4: warning: implicit declaration of function ‘gets’ [-Wimplicit-function-declaration]<br>    gets(str);   /* read a line of characters from the input to "str" variable */<br>    ^<br>/tmp/ccVAyj2a.o: In function `main':<br>source.c:(.text+0x10d): warning: the `gets' function is dangerous and should not be used.<br>
+  </div>
+
+<div id="id_submission_8092594" class="submission-view" style="clear: both;">
+  <h1>ถักอักขระ (1)</h1><p>จงเติมโค้ดเพื่อให้โปรแกรมสามารถทำงานได้อย่างสมบูรณ์ โดยที่ฟังก์ชัน int charcount(char *s) จะนับจำนวนอักขระที่ปรากฏอยู่ในสายอักษรที่ส่งผ่านเข้ามาในฟังก์ชันตั้งแต่อักขระตัวแรกจนถึงอักขระตัวสุดท้ายก่อนหน้าอักขระนัลล์ (null character)</p><p>ส่วนฟังก์ชัน void charweave(char *s,char *result) จะถักอักขระโดยเก็บผลลัพธ์ของการถักนี้ไว้ในตัวแปร result  การถักอักขระมีลักษณะดังนี้ 
+   สมมติให้ตัวแปร s มีอักขระอยู่ n ตัวและรูปแบบการเรียงของอักขระเป็น C<sub>1</sub>C<sub>2</sub>C<sub>3</sub>C<sub>4</sub>...C<sub>n</sub> ดังนั้นผลลัพธ์ที่ได้จากถักจะมีลักษณะเป็น  C<sub>1</sub>C<sub>n</sub>C<sub>2</sub>C<sub>n-1</sub>C<sub>3</sub>C<sub>n-2</sub>C<sub>4</sub>C<sub>n-3</sub>...C<sub>n-1</sub>C<sub>2</sub>C<sub>n</sub>C<sub>1</sub></p><h2>ตัวอย่างผลลัพธ์</h2><p></p><pre class="output">String: <em>hello, world</em>
+Output: hdellrloow,  ,woolrlledh
+</pre>
+<pre class="output">String: <em>12345</em>
+Output: 1524334251
+</pre>
+<fieldset><pre><div class="code-menu"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14874/#" class="lineno-toggle">[hide line #]</a></div><code class="source"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> charcount(<span class="kt">char</span> <span class="o">*</span>s)
+{
+   <textarea class="codeblank" cols="33" name="b1" rows="4" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">    int count = 0;
+    while (*s != '\0'){
+        count++;
+        s++;
+        }
+    return count;</textarea>
+}
+
+<span class="kt">void</span> charweave(<span class="kt">char</span> <span class="o">*</span>s,<span class="kt">char</span> <span class="o">*</span>result)
+{
+<textarea class="codeblank" cols="54" name="b2" rows="15" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">    int index = 0, i = 0; 
+    int n = charcount(s) * 2, length = charcount(s) - 1;
+
+    for (; index &lt; n; index += 2, i++){
+        result[index] = s[i];
+        result[index + 1] = s[length - i];
+    }
+    result[index] = '\0';</textarea>
+}
+
+<span class="kt">int</span> main()
+{  <span class="kt">char</span> str[<span class="mi">100</span>],result[<span class="mi">200</span>];
+
+   printf(<span class="s">"</span><span class="s">String: </span><span class="s">"</span>);
+   gets(str);   <span class="cm">/* read a line of characters from the input to "str" variable */</span>
+   charweave(str,result);
+   printf(<span class="s">"</span><span class="s">Output: %s</span><span class="se">\n</span><span class="s">"</span>,result);
+   <span class="k">return</span> <span class="mi">0</span>;
+}
+</code></pre></fieldset><p></p>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $(".compiler-messages").click(function() {
+      $(this.parentNode.parentNode)
+        .find(".compiler-message-view")
+        .toggle();
+    });
+  });
+</script>
+
+      
+    
+  </div><div id="ui-id-104" aria-live="polite" aria-labelledby="ui-id-103" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"></div>
+  <div id="all">
+  </div>
+</div>
+<script>
+  function copy_submission_to_current(submission_id) {
+    $.getJSON(Urls["lab:copy-submission"](submission_id), 
+      function(items) {
+        for(var i=0; i<items.length; i++) {
+          // blanks can be either input or textarea
+          $("#assignment-body input[name=" + items[i].name + "]")
+            .val(items[i].value); 
+          $("#assignment-body textarea[name=" + items[i].name + "]")
+            .val(items[i].value); 
+        }
+        $("#submission-tabs").tabs({active:0});
+      });
+  }
+
+  function bind_copy_current_link(link_query, submission_id) {
+    $(link_query).click(function (event) {
+      event.preventDefault();
+      copy_submission_to_current(submission_id);
+    });
+  }
+
+  function refresh_grading_status(assignment_id, submission_id) {
+    $.getJSON(Urls["lab:get-submission-status"](submission_id), 
+      function(data) {
+        if(data.graded) {
+          if($("#recent-"+assignment_id).length!=0) {
+            $("#recent-submission-status-" + assignment_id).html(data.assignment_status);
+            $("#recent-" + assignment_id).html(data.submission);
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"recent-"+assignment_id]);
+
+            bind_copy_current_link("#submission-tabs #recent-" + assignment_id + " .copy_to_current", submission_id);
+	    
+          }
+          $("#assignment-status-icon-" + assignment_id).html(data.icon);
+
+          // Recreate manual score boxes (as they were overwritten by the
+          // above html() call), then update the scores
+          ElabClient.create_manual_score_boxes(
+            $("#recent-" + assignment_id),{readOnly:true});
+          ElabClient.update_manual_score_boxes(
+            $("#recent-" + assignment_id),data.manual_scores);
+        } else {
+          if($("#recent-"+assignment_id).length!=0)
+            // refresh only when the scheduled assignment is the current one
+            schedule_refresh(assignment_id, submission_id);
+        }
+      });
+  }
+
+  function schedule_refresh(assignment_id, submission_id) {
+    setTimeout(function () {
+        refresh_grading_status(assignment_id, submission_id);
+    }, 3000);
+  }
+
+  function add_code_menu() {
+    $("code.source").before('<div class="code-menu"><a href="#" class="lineno-toggle">[hide line #]</a></div>');
+    $(".lineno-toggle").click(function() {
+      $(this.parentNode.parentNode).find(".lineno").toggle();
+      if(this.innerHTML=='[hide line #]')
+        this.innerHTML = '[show line #]';
+      else
+        this.innerHTML = '[hide line #]';
+    });
+  }				    
+
+  $(document).ready(function() {
+    $("#submission-tabs").tabs({ spinner: ''});
+    add_code_menu();
+
+    
+      bind_copy_current_link("#submission-tabs #recent-13731 .copy_to_current",
+                             "8092594");
+      var $recent = $("div#recent-13731");
+      ElabClient.create_manual_score_boxes($recent,{readOnly:true});
+
+      
+        ElabClient.update_manual_score_boxes(
+          $recent,all_manual_scores[8092594]);
+      
+    
+    $(".codeblank").attr("autocomplete","off");
+    $(".codeblank").attr("autocorrect", "off");
+    $(".codeblank").attr("autocapitalize", "off");
+    $(".codeblank").attr("spellcheck", "false");
+    $("form").attr("autocomplete","off");
+    
+      $(".copy_to_current").hide();
+    
+    ElabClient.render_components(9202,14874);
+  });
+</script>
+</div>
+  </div>
+</div>
+
+        
+    </div>
+    <!-- END Content -->
+
+    
+
+<div id="footer" style="font-size: 70%; margin-top: 5px; padding-left: 5px; border-top: 1px lightgrey solid; color: grey;">
+Icons from <a href="http://sweetie.sublink.ca/">Sweetie</a>.
+</div>
+
+<script>
+  all_manual_scores = {"8091386": null, "8091799": null, "8091497": null, "8092601": null, "8091797": null, "8092594": null, "8092643": null};
+  $task_form = $("div#current > form");
+  $task_form.areYouSure();
+</script>
+
+
+<!-- END Container -->
+
+
+
+</body></html>

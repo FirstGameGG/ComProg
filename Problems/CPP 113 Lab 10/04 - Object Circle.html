@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://elab.cpe.ku.ac.th/elab/lab/1248/15006/ -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Computer Programming | CPP 113 Lab 10 | E-Labsheet</title>
+
+
+
+
+<script type="text/javascript" src="./04 - Object Circle_files/jquery-3.3.1.min.js.download"></script>
+<script type="text/javascript" src="./04 - Object Circle_files/jquery-ui.min.js.download"></script>
+<script type="text/javascript" src="./04 - Object Circle_files/jquery.are-you-sure.js.download"></script>
+<script type="text/javascript" src="./04 - Object Circle_files/csrf.js.download"></script>
+<script type="text/javascript" src="./04 - Object Circle_files/reverse.js.download"></script>
+<script type="text/javascript" src="./04 - Object Circle_files/elab-client.js.download"></script>
+<link type="text/css" rel="stylesheet" href="./04 - Object Circle_files/jquery-ui.min.css">
+
+<link type="text/css" rel="stylesheet" href="./04 - Object Circle_files/css-stars.css">
+<script type="text/javascript" src="./04 - Object Circle_files/jquery.barrating.min.js.download"></script>
+<script type="text/javascript" async="" src="./04 - Object Circle_files/MathJax.js.download"></script>
+<script type="text/javascript">
+  lab_id = 1917;
+
+  function load_assignment(assignment_id) {
+    $.get(Urls["lab:get-assignment"](1248,15006,assignment_id), 
+          function(data) {
+            $("#assignment").html(data);
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"assignment-body"]);
+            $task_form = $("div#current > form");
+            $task_form.areYouSure();
+          })
+      .fail(function() {
+        alert("This task is currently unavailable");
+        location.reload();
+      });
+  }
+
+  function choose_assignment(assignment_id) {
+    $("#nav-links div.task").removeClass("chosen");
+    $("div#assignment-" + assignment_id).addClass("chosen");
+  }
+
+  function adjust_panels() {
+    var sidebar_width;
+    if ($("#nav-links").is(":visible"))
+      sidebar_width = $("#nav-links").outerWidth();
+    else
+      sidebar_width = 0;
+    var content_width = $(window).width() - sidebar_width;
+    $("#nav-content").width(content_width);
+
+    var toppanel_height = $("#header").height();
+    $("#toggle-sidebar").css("top",toppanel_height);
+  }
+
+  $(document).ready(function() {
+    // add code to each assignment link
+    
+      $("#assignment-13954").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13954);
+          load_assignment(13954);
+        }
+      });
+    
+      $("#assignment-13955").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13955);
+          load_assignment(13955);
+        }
+      });
+    
+      $("#assignment-13956").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13956);
+          load_assignment(13956);
+        }
+      });
+    
+      $("#assignment-13957").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13957);
+          load_assignment(13957);
+        }
+      });
+    
+      $("#assignment-13958").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13958);
+          load_assignment(13958);
+        }
+      });
+    
+      $("#assignment-13959").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13959);
+          load_assignment(13959);
+        }
+      });
+    
+
+    $("#toggle-sidebar").on("click",function() {
+      $("#nav-links").css("opacity",0);
+      $("#nav-links").toggle("slide",function() {
+        $("#nav-links").css("opacity",1);
+        adjust_panels();
+      });
+    });
+
+    adjust_panels();
+    $(window).resize(adjust_panels);
+  });
+</script>
+
+<link rel="stylesheet" type="text/css" href="./04 - Object Circle_files/base.css">
+<!-- Goggle Analytics not included because you haven't set the settings.GOOGLE_ANALYTICS_CODE variable! -->
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888; display: contents}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <div id="header">
+        <div class="info">
+          
+<div id="welcome">Welcome <b>ฐิติโชติ กิ่งไพบูลย์</b>
+[1.46.66.252]</div>
+
+          <div id="menu">
+            
+[<a href="https://elab.cpe.ku.ac.th/elab/lab/1248/">All labs</a>]
+
+
+
+
+[<a href="https://elab.cpe.ku.ac.th/elab/kusso/logout/">Log out</a>]
+
+
+
+          </div>
+	</div>
+        <h1>
+            
+
+            <a href="https://elab.cpe.ku.ac.th/elab/">E-Labsheet</a>
+            
+| <a href="https://elab.cpe.ku.ac.th/elab/lab/1248/">Computer Programming</a>
+
+        </h1>
+    </div>
+
+    
+
+
+    <!-- Content -->
+    <div id="content">
+        
+        
+<div id="container">
+  <div id="nav-links">
+  
+    <div id="lab-title" style="padding-bottom: 5px; padding-top: 10px;">
+      <div>
+        Lab 10:
+      </div>
+      <div>
+        CPP 113 Lab 10
+        
+          <span class="label label-warning">read-only</span>
+        
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13954">
+      <span style="color:blue">01 - Class Hero</span>
+      <div id="assignment-status-icon-13954" style="display: inline">
+        
+
+  
+    
+      <img src="./04 - Object Circle_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13955">
+      <span style="color:blue">02 - Object Hero</span>
+      <div id="assignment-status-icon-13955" style="display: inline">
+        
+
+  
+    
+      <img src="./04 - Object Circle_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13956">
+      <span style="color:blue">03 - Class Circle</span>
+      <div id="assignment-status-icon-13956" style="display: inline">
+        
+
+  
+    
+      <img src="./04 - Object Circle_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task chosen" id="assignment-13957">
+      <span style="color:blue">04 - Object Circle</span>
+      <div id="assignment-status-icon-13957" style="display: inline">
+        
+
+  
+    
+      <img src="./04 - Object Circle_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13958">
+      <span style="color:blue">05 - class Time</span>
+      <div id="assignment-status-icon-13958" style="display: inline">
+        
+
+  
+    
+      <img src="./04 - Object Circle_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13959">
+      <span style="color:blue">06 - class Time (c++11)</span>
+      <div id="assignment-status-icon-13959" style="display: inline">
+        
+
+  
+    
+      <img src="./04 - Object Circle_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    
+    
+  
+  </div>
+
+  <div id="nav-content" style="display: table-cell; width: 1794.22px;">
+    <label id="toggle-sidebar" title="Toggle side bar" style="top: 35px;">&lt;|&gt;</label>
+    <div id="assignment">
+
+<div id="assignment-title" style="padding-top: 15px">
+  04 Object Circle 
+</div>
+<div id="recent-submission-status-13957">
+  
+    
+
+<span style="padding-left:5px">Recent submission on 13:37 01 Mar 2024 
+<img src="./04 - Object Circle_files/16-arrow-right.png">
+Result: 
+
+  
+    
+      PASSED<img src="./04 - Object Circle_files/16-em-check.png">
+     
+  
+  
+  
+    <span title="P = Pass, - = Fail, S = Incorrect Spacing, C = Incorrect Case">
+      [PPPPP]
+    </span>
+    
+      <img class="result-details-icon" style="vertical-align:bottom; cursor: pointer" title="Explain results" src="./04 - Object Circle_files/16-clipboard-audit.png" onclick="ElabClient.show_result_explanation(this,8141739)">
+    
+  
+
+  
+
+</span><br>
+
+  
+</div>
+<div id="submission-tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+  <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="current" aria-labelledby="ui-id-65" aria-selected="false" aria-expanded="false"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/15006/#current" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-65"><span>Current</span></a></li>
+    <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="recent-13957" aria-labelledby="ui-id-66" aria-selected="true" aria-expanded="true"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/15006/#recent-13957" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-66"><span>Recent</span></a></li>
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="ui-id-68" aria-labelledby="ui-id-67" aria-selected="false" aria-expanded="false"><a href="https://elab.cpe.ku.ac.th/elab/lab/submissions/1248/13957/" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-67"><span>All</span></a></li>
+  </ul>
+  <div id="current" aria-labelledby="ui-id-65" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+    <form method="post" action="https://elab.cpe.ku.ac.th/elab/lab/submit/1248/15006/13957/" enctype="multipart/form-data" autocomplete="off">
+      <div id="assignment-body">
+        <input type="hidden" name="csrfmiddlewaretoken" value="T03VKD4hxitIBle8Jlk3R2NsWE9OuzyVLLPRmdpDhDx2M89vRFjfGdn91ahNtpK2">
+        <p>กำหนดให้ Class Circle ที่มี attributes ดังนี้</p>
+<ul>
+<li>จุดศูนย์กลางของวงกลม (<code>center</code>) เป็นข้อมูลชนิด point (struct _point)</li>
+<li>รัศมีของวงกลม (<code>radius</code>) เป็นข้อมูลชนิด double</li>
+</ul>
+<p>และ Object ที่ instantiate จาก Class Circle มี behaviors ดังนี้</p>
+<ul>
+<li>Constructor เพื่อกำหนดค่า <code>center</code> และ <code>radius</code> ของ object ตามลำดับ</li>
+<li>คืนค่าพื้นที่ของตนเอง (ชนิด double) ผ่าน method <code>area()</code> </li>
+<li>คืนค่าระยะทางจากจุดที่รับผ่าน parameter ถึงจุดศูนย์กลางของตนเอง ผ่าน method <code>distanceFromCenter(point pt)</code></li>
+<li>คืนค่า 1 เมื่อกำหนดจุดให้ แล้วตรวจสอบแล้วว่าจุดนั้นไม่เกินขอบเขตของวงกลม <br>
+หรือ คืนค่า 0 เมื่อกำหนดจุดให้ แล้วตรวจสอบแล้วว่าจุดนั้นอยู่นอกขอบเขตของวงกลม ผ่าน method <code>contains(point pt)</code></li>
+</ul>
+<p>ให้เขียนโปรแกรมเพื่อรับข้อมูลจุดศูนย์กลาง (บรรทัดที่ 1) และรัศมีของวงกลม (บรรทัดที่ 2) แล้วนำไปสร้าง Object จาก Class Circle <br>
+จากนั้นรับจุด <code>P</code> บนพิกัด XY (บรรทัดที่ 3) เพื่อแสดงผลข้อมูลต่อไปนี้โดยใช้ behaviors ของ Object ที่สร้างจาก Class Circle<br>
+บรรทัดที่ 4 แสดงพื้นที่ของวงกลม (object ที่สร้างขึ้น)<br>
+บรรทัดที่ 5 แสดงระยะจากจุดศูนย์กลางของวงกลม (object ที่สร้างขึ้น) ถึงจุด <code>P</code><br>
+บรรทัดที่ 6 แสดงผลลัพธ์ว่าจุด <code>P</code> อยู่นอกขอบเขตของวงกลม (object ที่สร้างขึ้น) หรือไม่</p>
+<ul>
+<li>ถ้าเกินขอบเขต ให้แสดงข้อความ <code>This point is not in this circle.</code></li>
+<li>ถ้าไม่เกินขอบเขต ให้แสดงข้อความ <code>This circle contains this point.</code></li>
+</ul>
+<p><strong>ตัวอย่างโปรแกรม 1</strong>
+</p><pre class="output">Center of Circle: <em>0</em> <em>0</em>
+Radius of Circle: <em>5</em>
+Point to Check: <em>3.3</em> <em>4.4</em>
+Area of Circle is 78.5398
+Distance from Center to Point (3.3, 4.4) is 5.5
+This point is not in this circle.
+</pre><p></p>
+<p><strong>ตัวอย่างโปรแกรม 2</strong>
+</p><pre class="output">Center of Circle: <em>7.5</em> <em>-2.5</em>
+Radius of Circle: <em>7.2</em>
+Point to Check: <em>6.9</em> <em>0</em>
+Area of Circle is 162.86
+Distance from Center to Point (6.9, 0) is 2.57099
+This circle contains this point.
+</pre> <p></p>
+<p>
+</p><fieldset>
+<pre><div class="code-menu"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/15006/#" class="lineno-toggle">[hide line #]</a></div><code class="source"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp"></span>
+<span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> std;
+
+<span class="k">typedef</span> <span class="k">struct</span> _point {
+    <span class="kt">double</span> xPosition;
+    <span class="kt">double</span> yPosition;
+} point;
+
+<span class="k">class</span> <span class="nc">Circle</span> <span class="c1">// เขียน Class Circle เอง</span>
+
+<span class="kt">int</span> main()
+{
+<textarea class="codeblank" cols="81" name="b1" rows="22" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+}
+
+</code></pre>
+</fieldset>
+<p></p> 
+      </div>
+      
+      
+    </form>
+  </div>
+  <div id="recent-13957" class="recent ui-tabs-panel ui-corner-bottom ui-widget-content" aria-labelledby="ui-id-66" role="tabpanel" aria-hidden="false" style="">
+    
+      
+        
+<div id="id_submission_status_8141739" class="submission-status ui-corner-all">
+  Submitted on 13:37 01 Mar 2024 || 
+  Result: 
+
+  
+    
+      PASSED<img src="./04 - Object Circle_files/16-em-check.png">
+     
+  
+  
+  
+    <span title="P = Pass, - = Fail, S = Incorrect Spacing, C = Incorrect Case">
+      [PPPPP]
+    </span>
+    
+      <img class="result-details-icon" style="vertical-align:bottom; cursor: pointer" title="Explain results" src="./04 - Object Circle_files/16-clipboard-audit.png" onclick="ElabClient.show_result_explanation(this,8141739)">
+    
+  
+
+  
+
+
+  
+  
+  <button class="copy_to_current" href="" style="display: none;">Copy to current</button>
+
+</div>
+
+<div id="id_submission_8141739" class="submission-view" style="clear: both;">
+  <p>กำหนดให้ Class Circle ที่มี attributes ดังนี้</p>
+<ul>
+<li>จุดศูนย์กลางของวงกลม (<code>center</code>) เป็นข้อมูลชนิด point (struct _point)</li>
+<li>รัศมีของวงกลม (<code>radius</code>) เป็นข้อมูลชนิด double</li>
+</ul>
+<p>และ Object ที่ instantiate จาก Class Circle มี behaviors ดังนี้</p>
+<ul>
+<li>Constructor เพื่อกำหนดค่า <code>center</code> และ <code>radius</code> ของ object ตามลำดับ</li>
+<li>คืนค่าพื้นที่ของตนเอง (ชนิด double) ผ่าน method <code>area()</code> </li>
+<li>คืนค่าระยะทางจากจุดที่รับผ่าน parameter ถึงจุดศูนย์กลางของตนเอง ผ่าน method <code>distanceFromCenter(point pt)</code></li>
+<li>คืนค่า 1 เมื่อกำหนดจุดให้ แล้วตรวจสอบแล้วว่าจุดนั้นไม่เกินขอบเขตของวงกลม <br>
+หรือ คืนค่า 0 เมื่อกำหนดจุดให้ แล้วตรวจสอบแล้วว่าจุดนั้นอยู่นอกขอบเขตของวงกลม ผ่าน method <code>contains(point pt)</code></li>
+</ul>
+<p>ให้เขียนโปรแกรมเพื่อรับข้อมูลจุดศูนย์กลาง (บรรทัดที่ 1) และรัศมีของวงกลม (บรรทัดที่ 2) แล้วนำไปสร้าง Object จาก Class Circle <br>
+จากนั้นรับจุด <code>P</code> บนพิกัด XY (บรรทัดที่ 3) เพื่อแสดงผลข้อมูลต่อไปนี้โดยใช้ behaviors ของ Object ที่สร้างจาก Class Circle<br>
+บรรทัดที่ 4 แสดงพื้นที่ของวงกลม (object ที่สร้างขึ้น)<br>
+บรรทัดที่ 5 แสดงระยะจากจุดศูนย์กลางของวงกลม (object ที่สร้างขึ้น) ถึงจุด <code>P</code><br>
+บรรทัดที่ 6 แสดงผลลัพธ์ว่าจุด <code>P</code> อยู่นอกขอบเขตของวงกลม (object ที่สร้างขึ้น) หรือไม่</p>
+<ul>
+<li>ถ้าเกินขอบเขต ให้แสดงข้อความ <code>This point is not in this circle.</code></li>
+<li>ถ้าไม่เกินขอบเขต ให้แสดงข้อความ <code>This circle contains this point.</code></li>
+</ul>
+<p><strong>ตัวอย่างโปรแกรม 1</strong>
+</p><pre class="output">Center of Circle: <em>0</em> <em>0</em>
+Radius of Circle: <em>5</em>
+Point to Check: <em>3.3</em> <em>4.4</em>
+Area of Circle is 78.5398
+Distance from Center to Point (3.3, 4.4) is 5.5
+This point is not in this circle.
+</pre><p></p>
+<p><strong>ตัวอย่างโปรแกรม 2</strong>
+</p><pre class="output">Center of Circle: <em>7.5</em> <em>-2.5</em>
+Radius of Circle: <em>7.2</em>
+Point to Check: <em>6.9</em> <em>0</em>
+Area of Circle is 162.86
+Distance from Center to Point (6.9, 0) is 2.57099
+This circle contains this point.
+</pre> <p></p>
+<p>
+</p><fieldset>
+<pre><div class="code-menu"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/15006/#" class="lineno-toggle">[hide line #]</a></div><code class="source"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp"></span>
+<span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> std;
+
+<span class="k">typedef</span> <span class="k">struct</span> _point {
+    <span class="kt">double</span> xPosition;
+    <span class="kt">double</span> yPosition;
+} point;
+
+<span class="k">class</span> <span class="nc">Circle</span> <span class="c1">// เขียน Class Circle เอง</span>
+
+<span class="kt">int</span> main()
+{
+<textarea class="codeblank" cols="81" name="b1" rows="22" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">    point pt;
+    double radius;
+
+   cout &lt;&lt; "Center of Circle: ";
+   cin &gt;&gt; pt.xPosition &gt;&gt; pt.yPosition;
+   cout &lt;&lt; "Radius of Circle: ";
+   cin &gt;&gt; radius;
+
+   Circle circle(pt, radius);
+
+   cout &lt;&lt; "Point to Check: ";
+   cin &gt;&gt; pt.xPosition &gt;&gt; pt.yPosition;
+
+   cout &lt;&lt; "Area of Circle is " &lt;&lt; circle.area() &lt;&lt; endl;
+   cout &lt;&lt; "Distance from Center to Point (" &lt;&lt; pt.xPosition &lt;&lt; ", " &lt;&lt; pt.yPosition &lt;&lt; ") is " &lt;&lt; circle.distanceFromCenter(pt) &lt;&lt; endl;
+
+   if (circle.contains(pt)) cout &lt;&lt; "This circle contains this point." &lt;&lt; endl;
+   else cout &lt;&lt; "This point is not in this circle." &lt;&lt; endl;</textarea>
+}
+
+</code></pre>
+</fieldset>
+<p></p>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $(".compiler-messages").click(function() {
+      $(this.parentNode.parentNode)
+        .find(".compiler-message-view")
+        .toggle();
+    });
+  });
+</script>
+
+      
+    
+  </div><div id="ui-id-68" aria-live="polite" aria-labelledby="ui-id-67" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"></div>
+  <div id="all">
+  </div>
+</div>
+<script>
+  function copy_submission_to_current(submission_id) {
+    $.getJSON(Urls["lab:copy-submission"](submission_id), 
+      function(items) {
+        for(var i=0; i<items.length; i++) {
+          // blanks can be either input or textarea
+          $("#assignment-body input[name=" + items[i].name + "]")
+            .val(items[i].value); 
+          $("#assignment-body textarea[name=" + items[i].name + "]")
+            .val(items[i].value); 
+        }
+        $("#submission-tabs").tabs({active:0});
+      });
+  }
+
+  function bind_copy_current_link(link_query, submission_id) {
+    $(link_query).click(function (event) {
+      event.preventDefault();
+      copy_submission_to_current(submission_id);
+    });
+  }
+
+  function refresh_grading_status(assignment_id, submission_id) {
+    $.getJSON(Urls["lab:get-submission-status"](submission_id), 
+      function(data) {
+        if(data.graded) {
+          if($("#recent-"+assignment_id).length!=0) {
+            $("#recent-submission-status-" + assignment_id).html(data.assignment_status);
+            $("#recent-" + assignment_id).html(data.submission);
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"recent-"+assignment_id]);
+
+            bind_copy_current_link("#submission-tabs #recent-" + assignment_id + " .copy_to_current", submission_id);
+	    
+          }
+          $("#assignment-status-icon-" + assignment_id).html(data.icon);
+
+          // Recreate manual score boxes (as they were overwritten by the
+          // above html() call), then update the scores
+          ElabClient.create_manual_score_boxes(
+            $("#recent-" + assignment_id),{readOnly:true});
+          ElabClient.update_manual_score_boxes(
+            $("#recent-" + assignment_id),data.manual_scores);
+        } else {
+          if($("#recent-"+assignment_id).length!=0)
+            // refresh only when the scheduled assignment is the current one
+            schedule_refresh(assignment_id, submission_id);
+        }
+      });
+  }
+
+  function schedule_refresh(assignment_id, submission_id) {
+    setTimeout(function () {
+        refresh_grading_status(assignment_id, submission_id);
+    }, 3000);
+  }
+
+  function add_code_menu() {
+    $("code.source").before('<div class="code-menu"><a href="#" class="lineno-toggle">[hide line #]</a></div>');
+    $(".lineno-toggle").click(function() {
+      $(this.parentNode.parentNode).find(".lineno").toggle();
+      if(this.innerHTML=='[hide line #]')
+        this.innerHTML = '[show line #]';
+      else
+        this.innerHTML = '[hide line #]';
+    });
+  }				    
+
+  $(document).ready(function() {
+    $("#submission-tabs").tabs({ spinner: ''});
+    add_code_menu();
+
+    
+      bind_copy_current_link("#submission-tabs #recent-13957 .copy_to_current",
+                             "8141739");
+      var $recent = $("div#recent-13957");
+      ElabClient.create_manual_score_boxes($recent,{readOnly:true});
+
+      
+        ElabClient.update_manual_score_boxes(
+          $recent,all_manual_scores[8141739]);
+      
+    
+    $(".codeblank").attr("autocomplete","off");
+    $(".codeblank").attr("autocorrect", "off");
+    $(".codeblank").attr("autocapitalize", "off");
+    $(".codeblank").attr("spellcheck", "false");
+    $("form").attr("autocomplete","off");
+    
+      $(".copy_to_current").hide();
+    
+    ElabClient.render_components(9381,15006);
+  });
+</script>
+</div>
+  </div>
+</div>
+
+        
+    </div>
+    <!-- END Content -->
+
+    
+
+<div id="footer" style="font-size: 70%; margin-top: 5px; padding-left: 5px; border-top: 1px lightgrey solid; color: grey;">
+Icons from <a href="http://sweetie.sublink.ca/">Sweetie</a>.
+</div>
+
+<script>
+  all_manual_scores = {"8141618": null, "8141636": null, "8141703": null, "8141739": null, "8160867": null, "8160874": null};
+  $task_form = $("div#current > form");
+  $task_form.areYouSure();
+</script>
+
+
+<!-- END Container -->
+
+
+
+</body></html>

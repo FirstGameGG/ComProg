@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://elab.cpe.ku.ac.th/elab/lab/1248/14955/ -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Computer Programming | C 113 Lab 9 | E-Labsheet</title>
+
+
+
+
+<script type="text/javascript" src="./02 - คำนวณวันในสัปดาห์_files/jquery-3.3.1.min.js.download"></script>
+<script type="text/javascript" src="./02 - คำนวณวันในสัปดาห์_files/jquery-ui.min.js.download"></script>
+<script type="text/javascript" src="./02 - คำนวณวันในสัปดาห์_files/jquery.are-you-sure.js.download"></script>
+<script type="text/javascript" src="./02 - คำนวณวันในสัปดาห์_files/csrf.js.download"></script>
+<script type="text/javascript" src="./02 - คำนวณวันในสัปดาห์_files/reverse.js.download"></script>
+<script type="text/javascript" src="./02 - คำนวณวันในสัปดาห์_files/elab-client.js.download"></script>
+<link type="text/css" rel="stylesheet" href="./02 - คำนวณวันในสัปดาห์_files/jquery-ui.min.css">
+
+<link type="text/css" rel="stylesheet" href="./02 - คำนวณวันในสัปดาห์_files/css-stars.css">
+<script type="text/javascript" src="./02 - คำนวณวันในสัปดาห์_files/jquery.barrating.min.js.download"></script>
+<script type="text/javascript" async="" src="./02 - คำนวณวันในสัปดาห์_files/MathJax.js.download"></script>
+<script type="text/javascript">
+  lab_id = 1908;
+
+  function load_assignment(assignment_id) {
+    $.get(Urls["lab:get-assignment"](1248,14955,assignment_id), 
+          function(data) {
+            $("#assignment").html(data);
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"assignment-body"]);
+            $task_form = $("div#current > form");
+            $task_form.areYouSure();
+          })
+      .fail(function() {
+        alert("This task is currently unavailable");
+        location.reload();
+      });
+  }
+
+  function choose_assignment(assignment_id) {
+    $("#nav-links div.task").removeClass("chosen");
+    $("div#assignment-" + assignment_id).addClass("chosen");
+  }
+
+  function adjust_panels() {
+    var sidebar_width;
+    if ($("#nav-links").is(":visible"))
+      sidebar_width = $("#nav-links").outerWidth();
+    else
+      sidebar_width = 0;
+    var content_width = $(window).width() - sidebar_width;
+    $("#nav-content").width(content_width);
+
+    var toppanel_height = $("#header").height();
+    $("#toggle-sidebar").css("top",toppanel_height);
+  }
+
+  $(document).ready(function() {
+    // add code to each assignment link
+    
+      $("#assignment-13882").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13882);
+          load_assignment(13882);
+        }
+      });
+    
+      $("#assignment-13883").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13883);
+          load_assignment(13883);
+        }
+      });
+    
+      $("#assignment-13908").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13908);
+          load_assignment(13908);
+        }
+      });
+    
+      $("#assignment-13881").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13881);
+          load_assignment(13881);
+        }
+      });
+    
+      $("#assignment-13905").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13905);
+          load_assignment(13905);
+        }
+      });
+    
+      $("#assignment-13909").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13909);
+          load_assignment(13909);
+        }
+      });
+    
+      $("#assignment-13937").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13937);
+          load_assignment(13937);
+        }
+      });
+    
+      $("#assignment-13938").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13938);
+          load_assignment(13938);
+        }
+      });
+    
+
+    $("#toggle-sidebar").on("click",function() {
+      $("#nav-links").css("opacity",0);
+      $("#nav-links").toggle("slide",function() {
+        $("#nav-links").css("opacity",1);
+        adjust_panels();
+      });
+    });
+
+    adjust_panels();
+    $(window).resize(adjust_panels);
+  });
+</script>
+
+<link rel="stylesheet" type="text/css" href="./02 - คำนวณวันในสัปดาห์_files/base.css">
+<!-- Goggle Analytics not included because you haven't set the settings.GOOGLE_ANALYTICS_CODE variable! -->
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888; display: contents}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <div id="header">
+        <div class="info">
+          
+<div id="welcome">Welcome <b>ฐิติโชติ กิ่งไพบูลย์</b>
+[1.46.66.252]</div>
+
+          <div id="menu">
+            
+[<a href="https://elab.cpe.ku.ac.th/elab/lab/1248/">All labs</a>]
+
+
+
+
+[<a href="https://elab.cpe.ku.ac.th/elab/kusso/logout/">Log out</a>]
+
+
+
+          </div>
+	</div>
+        <h1>
+            
+
+            <a href="https://elab.cpe.ku.ac.th/elab/">E-Labsheet</a>
+            
+| <a href="https://elab.cpe.ku.ac.th/elab/lab/1248/">Computer Programming</a>
+
+        </h1>
+    </div>
+
+    
+
+
+    <!-- Content -->
+    <div id="content">
+        
+        
+<div id="container">
+  <div id="nav-links">
+  
+    <div id="lab-title" style="padding-bottom: 5px; padding-top: 10px;">
+      <div>
+        Lab 09:
+      </div>
+      <div>
+        C 113 Lab 9
+        
+          <span class="label label-warning">read-only</span>
+        
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13882">
+      <span style="color:blue">01 - กำหนดโครงสร้างข้อมูล enum</span>
+      <div id="assignment-status-icon-13882" style="display: inline">
+        
+
+  
+    
+      <img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task chosen" id="assignment-13883">
+      <span style="color:blue">02 - คำนวณวันในสัปดาห์</span>
+      <div id="assignment-status-icon-13883" style="display: inline">
+        
+
+  
+    
+      <img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13908">
+      <span style="color:blue">03 - Struct ที่เก็บพิกัดของจุด และหาระยะทาง</span>
+      <div id="assignment-status-icon-13908" style="display: inline">
+        
+
+  
+    
+      <img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13881">
+      <span style="color:blue">04 - Word Count</span>
+      <div id="assignment-status-icon-13881" style="display: inline">
+        
+
+  
+    
+      <img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13905">
+      <span style="color:blue">05 - Single Linked List</span>
+      <div id="assignment-status-icon-13905" style="display: inline">
+        
+
+  
+    
+      <img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13909">
+      <span style="color:blue">06 - จำนวนบิตที่ไม่ใช่ 0</span>
+      <div id="assignment-status-icon-13909" style="display: inline">
+        
+
+  
+    
+      <img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13937">
+      <span style="color:blue">07 - File Average Score</span>
+      <div id="assignment-status-icon-13937" style="display: inline">
+        
+
+  
+    
+      <img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13938">
+      <span style="color:blue">08 - Stock Log File</span>
+      <div id="assignment-status-icon-13938" style="display: inline">
+        
+
+  
+    
+      <img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    
+    
+  
+  </div>
+
+  <div id="nav-content" style="display: table-cell; width: 1794.22px;">
+    <label id="toggle-sidebar" title="Toggle side bar" style="top: 35px;">&lt;|&gt;</label>
+    <div id="assignment">
+
+<div id="assignment-title" style="padding-top: 15px">
+  02 คำนวณวันในสัปดาห์ 
+</div>
+<div id="recent-submission-status-13883">
+  
+    
+
+<span style="padding-left:5px">Recent submission on 6:39 23 Feb 2024 
+<img src="./02 - คำนวณวันในสัปดาห์_files/16-arrow-right.png">
+Result: 
+
+  
+    
+      PASSED<img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+  
+    <span title="P = Pass, - = Fail, S = Incorrect Spacing, C = Incorrect Case">
+      [PPPPPPP]
+    </span>
+    
+      <img class="result-details-icon" style="vertical-align:bottom; cursor: pointer" title="Explain results" src="./02 - คำนวณวันในสัปดาห์_files/16-clipboard-audit.png" onclick="ElabClient.show_result_explanation(this,8129260)">
+    
+  
+
+  
+
+</span><br>
+
+  
+</div>
+<div id="submission-tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+  <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="current" aria-labelledby="ui-id-29" aria-selected="false" aria-expanded="false"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14955/#current" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-29"><span>Current</span></a></li>
+    <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="recent-13883" aria-labelledby="ui-id-30" aria-selected="true" aria-expanded="true"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14955/#recent-13883" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-30"><span>Recent</span></a></li>
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="ui-id-32" aria-labelledby="ui-id-31" aria-selected="false" aria-expanded="false"><a href="https://elab.cpe.ku.ac.th/elab/lab/submissions/1248/13883/" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-31"><span>All</span></a></li>
+  </ul>
+  <div id="current" aria-labelledby="ui-id-29" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+    <form method="post" action="https://elab.cpe.ku.ac.th/elab/lab/submit/1248/14955/13883/" enctype="multipart/form-data" autocomplete="off">
+      <div id="assignment-body">
+        <input type="hidden" name="csrfmiddlewaretoken" value="Qk13qOz3bXZ0DwQqIJEO4xFAd5dQLLFUI5NZ2oUpVi3kOjLNQ3D0TIfhiBlPKBR1">
+        <h1>หาวันในสัปดาห์</h1><p>ให้นิสิตกำหนด <code>enum</code> ของ <code>DayOfWeek</code> และเขียนฟังก์ชันชื่อ <code>findDayOfWeek()</code> เพื่อหาวันของสัปดาห์จากวันและเดือน (เป็นตัวเลข) ของปีพ.ศ. 2556 ที่ผู้ใช้พิมพ์เข้ามา สังเกตว่าวันที่ 1 เดือน 1 ของปีพ.ศ. 2556 นั้นเป็นวันอังคาร</p><h2>ตัวอย่าง</h2><p></p><pre class="output">Day:1 Month:1 of Year 2013 is Tuesday.
+Enter Day and Month: <em>26 7</em>
+Day:26 Month:7 of Year 2013 is Friday.
+</pre><p></p><p></p><fieldset><pre><div class="code-menu"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14955/#" class="lineno-toggle">[hide line #]</a></div><code class="source"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<input class="codeblank" name="b1" size="86" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
+DayOfWeek <span class="nf">findDayOfWeek</span>(<span class="kt">int</span> day, <span class="kt">int</span> month) {
+<textarea class="codeblank" cols="86" name="b2" rows="9" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+}
+
+<span class="kt">int</span> main()
+{
+	<span class="kt">int</span> day, month;
+	DayOfWeek dow;
+
+	printf(<span class="s">"</span><span class="s">Day:1 Month:1 of Year 2013 is Tuesday.</span><span class="se">\n</span><span class="s">"</span>);
+	printf(<span class="s">"</span><span class="s">Enter Day and Month: </span><span class="s">"</span>);
+	scanf(<span class="s">"</span><span class="s">%d %d</span><span class="s">"</span>, <span class="o">&amp;</span>day, <span class="o">&amp;</span>month);
+	dow <span class="o">=</span> findDayOfWeek(day, month);
+	printf(<span class="s">"</span><span class="s">Day:%d Month:%d of Year 2013 is </span><span class="s">"</span>, day, month);
+	<span class="k">switch</span>(dow){
+		<span class="k">case</span><input class="codeblank" name="b3" size="7" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Sunday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b4" size="7" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Monday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b5" size="7" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Tuesday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b6" size="7" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Wednesday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b7" size="7" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Thursday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b8" size="7" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Friday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b9" size="7" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Saturday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+	}
+}
+</code></pre></fieldset><p></p> 
+      </div>
+      
+      
+    </form>
+  </div>
+  <div id="recent-13883" class="recent ui-tabs-panel ui-corner-bottom ui-widget-content" aria-labelledby="ui-id-30" role="tabpanel" aria-hidden="false" style="">
+    
+      
+        
+<div id="id_submission_status_8129260" class="submission-status ui-corner-all">
+  Submitted on 6:39 23 Feb 2024 || 
+  Result: 
+
+  
+    
+      PASSED<img src="./02 - คำนวณวันในสัปดาห์_files/16-em-check.png">
+     
+  
+  
+  
+    <span title="P = Pass, - = Fail, S = Incorrect Spacing, C = Incorrect Case">
+      [PPPPPPP]
+    </span>
+    
+      <img class="result-details-icon" style="vertical-align:bottom; cursor: pointer" title="Explain results" src="./02 - คำนวณวันในสัปดาห์_files/16-clipboard-audit.png" onclick="ElabClient.show_result_explanation(this,8129260)">
+    
+  
+
+  
+
+
+  
+  
+  <button class="copy_to_current" href="" style="display: none;">Copy to current</button>
+
+</div>
+
+<div id="id_submission_8129260" class="submission-view" style="clear: both;">
+  <h1>หาวันในสัปดาห์</h1><p>ให้นิสิตกำหนด <code>enum</code> ของ <code>DayOfWeek</code> และเขียนฟังก์ชันชื่อ <code>findDayOfWeek()</code> เพื่อหาวันของสัปดาห์จากวันและเดือน (เป็นตัวเลข) ของปีพ.ศ. 2556 ที่ผู้ใช้พิมพ์เข้ามา สังเกตว่าวันที่ 1 เดือน 1 ของปีพ.ศ. 2556 นั้นเป็นวันอังคาร</p><h2>ตัวอย่าง</h2><p></p><pre class="output">Day:1 Month:1 of Year 2013 is Tuesday.
+Enter Day and Month: <em>26 7</em>
+Day:26 Month:7 of Year 2013 is Friday.
+</pre><p></p><p></p><fieldset><pre><div class="code-menu"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14955/#" class="lineno-toggle">[hide line #]</a></div><code class="source"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<input class="codeblank" name="b1" size="86" type="text" value="typedef int DayOfWeek;" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
+DayOfWeek <span class="nf">findDayOfWeek</span>(<span class="kt">int</span> day, <span class="kt">int</span> month) {
+<textarea class="codeblank" cols="86" name="b2" rows="9" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">    int days_in_month[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int day_passed = 0;
+    for (int i = 0; i &lt; month; i++) day_passed += days_in_month[i];
+    day_passed += day;
+    int index = day_passed % 7;
+    return index;</textarea>
+}
+
+<span class="kt">int</span> main()
+{
+	<span class="kt">int</span> day, month;
+	DayOfWeek dow;
+
+	printf(<span class="s">"</span><span class="s">Day:1 Month:1 of Year 2013 is Tuesday.</span><span class="se">\n</span><span class="s">"</span>);
+	printf(<span class="s">"</span><span class="s">Enter Day and Month: </span><span class="s">"</span>);
+	scanf(<span class="s">"</span><span class="s">%d %d</span><span class="s">"</span>, <span class="o">&amp;</span>day, <span class="o">&amp;</span>month);
+	dow <span class="o">=</span> findDayOfWeek(day, month);
+	printf(<span class="s">"</span><span class="s">Day:%d Month:%d of Year 2013 is </span><span class="s">"</span>, day, month);
+	<span class="k">switch</span>(dow){
+		<span class="k">case</span><input class="codeblank" name="b3" size="7" type="text" value="(6)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Sunday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b4" size="7" type="text" value="(0)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Monday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b5" size="7" type="text" value="(1)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Tuesday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b6" size="7" type="text" value="(2)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Wednesday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b7" size="7" type="text" value="(3)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Thursday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b8" size="7" type="text" value="(4)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Friday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+		<span class="k">case</span><input class="codeblank" name="b9" size="7" type="text" value="(5)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="o">:</span> printf(<span class="s">"</span><span class="s">Saturday.</span><span class="se">\n</span><span class="s">"</span>); <span class="k">break</span>;
+	}
+}
+</code></pre></fieldset><p></p>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $(".compiler-messages").click(function() {
+      $(this.parentNode.parentNode)
+        .find(".compiler-message-view")
+        .toggle();
+    });
+  });
+</script>
+
+      
+    
+  </div><div id="ui-id-32" aria-live="polite" aria-labelledby="ui-id-31" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"></div>
+  <div id="all">
+  </div>
+</div>
+<script>
+  function copy_submission_to_current(submission_id) {
+    $.getJSON(Urls["lab:copy-submission"](submission_id), 
+      function(items) {
+        for(var i=0; i<items.length; i++) {
+          // blanks can be either input or textarea
+          $("#assignment-body input[name=" + items[i].name + "]")
+            .val(items[i].value); 
+          $("#assignment-body textarea[name=" + items[i].name + "]")
+            .val(items[i].value); 
+        }
+        $("#submission-tabs").tabs({active:0});
+      });
+  }
+
+  function bind_copy_current_link(link_query, submission_id) {
+    $(link_query).click(function (event) {
+      event.preventDefault();
+      copy_submission_to_current(submission_id);
+    });
+  }
+
+  function refresh_grading_status(assignment_id, submission_id) {
+    $.getJSON(Urls["lab:get-submission-status"](submission_id), 
+      function(data) {
+        if(data.graded) {
+          if($("#recent-"+assignment_id).length!=0) {
+            $("#recent-submission-status-" + assignment_id).html(data.assignment_status);
+            $("#recent-" + assignment_id).html(data.submission);
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"recent-"+assignment_id]);
+
+            bind_copy_current_link("#submission-tabs #recent-" + assignment_id + " .copy_to_current", submission_id);
+	    
+          }
+          $("#assignment-status-icon-" + assignment_id).html(data.icon);
+
+          // Recreate manual score boxes (as they were overwritten by the
+          // above html() call), then update the scores
+          ElabClient.create_manual_score_boxes(
+            $("#recent-" + assignment_id),{readOnly:true});
+          ElabClient.update_manual_score_boxes(
+            $("#recent-" + assignment_id),data.manual_scores);
+        } else {
+          if($("#recent-"+assignment_id).length!=0)
+            // refresh only when the scheduled assignment is the current one
+            schedule_refresh(assignment_id, submission_id);
+        }
+      });
+  }
+
+  function schedule_refresh(assignment_id, submission_id) {
+    setTimeout(function () {
+        refresh_grading_status(assignment_id, submission_id);
+    }, 3000);
+  }
+
+  function add_code_menu() {
+    $("code.source").before('<div class="code-menu"><a href="#" class="lineno-toggle">[hide line #]</a></div>');
+    $(".lineno-toggle").click(function() {
+      $(this.parentNode.parentNode).find(".lineno").toggle();
+      if(this.innerHTML=='[hide line #]')
+        this.innerHTML = '[show line #]';
+      else
+        this.innerHTML = '[hide line #]';
+    });
+  }				    
+
+  $(document).ready(function() {
+    $("#submission-tabs").tabs({ spinner: ''});
+    add_code_menu();
+
+    
+      bind_copy_current_link("#submission-tabs #recent-13883 .copy_to_current",
+                             "8129260");
+      var $recent = $("div#recent-13883");
+      ElabClient.create_manual_score_boxes($recent,{readOnly:true});
+
+      
+        ElabClient.update_manual_score_boxes(
+          $recent,all_manual_scores[8129260]);
+      
+    
+    $(".codeblank").attr("autocomplete","off");
+    $(".codeblank").attr("autocorrect", "off");
+    $(".codeblank").attr("autocapitalize", "off");
+    $(".codeblank").attr("spellcheck", "false");
+    $("form").attr("autocomplete","off");
+    
+      $(".copy_to_current").hide();
+    
+    ElabClient.render_components(9335,14955);
+  });
+</script>
+</div>
+  </div>
+</div>
+
+        
+    </div>
+    <!-- END Content -->
+
+    
+
+<div id="footer" style="font-size: 70%; margin-top: 5px; padding-left: 5px; border-top: 1px lightgrey solid; color: grey;">
+Icons from <a href="http://sweetie.sublink.ca/">Sweetie</a>.
+</div>
+
+<script>
+  all_manual_scores = {"8129121": null, "8129260": null, "8129244": null, "8129090": null, "8141403": null, "8129248": null, "8129005": null, "8144537": null};
+  $task_form = $("div#current > form");
+  $task_form.areYouSure();
+</script>
+
+
+<!-- END Container -->
+
+
+
+</body></html>

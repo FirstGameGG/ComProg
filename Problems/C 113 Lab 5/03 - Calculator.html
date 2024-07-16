@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://elab.cpe.ku.ac.th/elab/lab/1248/14815/ -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Computer Programming | C 113 Lab 5 | E-Labsheet</title>
+
+
+
+
+<script type="text/javascript" src="./03 - Calculator_files/jquery-3.3.1.min.js.download"></script>
+<script type="text/javascript" src="./03 - Calculator_files/jquery-ui.min.js.download"></script>
+<script type="text/javascript" src="./03 - Calculator_files/jquery.are-you-sure.js.download"></script>
+<script type="text/javascript" src="./03 - Calculator_files/csrf.js.download"></script>
+<script type="text/javascript" src="./03 - Calculator_files/reverse.js.download"></script>
+<script type="text/javascript" src="./03 - Calculator_files/elab-client.js.download"></script>
+<link type="text/css" rel="stylesheet" href="./03 - Calculator_files/jquery-ui.min.css">
+
+<link type="text/css" rel="stylesheet" href="./03 - Calculator_files/css-stars.css">
+<script type="text/javascript" src="./03 - Calculator_files/jquery.barrating.min.js.download"></script>
+<script type="text/javascript" async="" src="./03 - Calculator_files/MathJax.js.download"></script>
+<script type="text/javascript">
+  lab_id = 1867;
+
+  function load_assignment(assignment_id) {
+    $.get(Urls["lab:get-assignment"](1248,14815,assignment_id), 
+          function(data) {
+            $("#assignment").html(data);
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"assignment-body"]);
+            $task_form = $("div#current > form");
+            $task_form.areYouSure();
+          })
+      .fail(function() {
+        alert("This task is currently unavailable");
+        location.reload();
+      });
+  }
+
+  function choose_assignment(assignment_id) {
+    $("#nav-links div.task").removeClass("chosen");
+    $("div#assignment-" + assignment_id).addClass("chosen");
+  }
+
+  function adjust_panels() {
+    var sidebar_width;
+    if ($("#nav-links").is(":visible"))
+      sidebar_width = $("#nav-links").outerWidth();
+    else
+      sidebar_width = 0;
+    var content_width = $(window).width() - sidebar_width;
+    $("#nav-content").width(content_width);
+
+    var toppanel_height = $("#header").height();
+    $("#toggle-sidebar").css("top",toppanel_height);
+  }
+
+  $(document).ready(function() {
+    // add code to each assignment link
+    
+      $("#assignment-13681").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13681);
+          load_assignment(13681);
+        }
+      });
+    
+      $("#assignment-13597").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13597);
+          load_assignment(13597);
+        }
+      });
+    
+      $("#assignment-13683").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13683);
+          load_assignment(13683);
+        }
+      });
+    
+      $("#assignment-15299").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(15299);
+          load_assignment(15299);
+        }
+      });
+    
+      $("#assignment-15300").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(15300);
+          load_assignment(15300);
+        }
+      });
+    
+      $("#assignment-13684").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13684);
+          load_assignment(13684);
+        }
+      });
+    
+      $("#assignment-13685").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13685);
+          load_assignment(13685);
+        }
+      });
+    
+      $("#assignment-13687").click(function(event) {
+        event.preventDefault();
+        if (!$task_form.hasClass("dirty") || confirm("Your work may not be saved.  Are you sure?")) {
+          choose_assignment(13687);
+          load_assignment(13687);
+        }
+      });
+    
+
+    $("#toggle-sidebar").on("click",function() {
+      $("#nav-links").css("opacity",0);
+      $("#nav-links").toggle("slide",function() {
+        $("#nav-links").css("opacity",1);
+        adjust_panels();
+      });
+    });
+
+    adjust_panels();
+    $(window).resize(adjust_panels);
+  });
+</script>
+
+<link rel="stylesheet" type="text/css" href="./03 - Calculator_files/base.css">
+<!-- Goggle Analytics not included because you haven't set the settings.GOOGLE_ANALYTICS_CODE variable! -->
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888; display: contents}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.mjx-chtml {display: inline-block; line-height: 0; text-indent: 0; text-align: left; text-transform: none; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; letter-spacing: normal; word-wrap: normal; word-spacing: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; margin: 0; padding: 1px 0}
+.MJXc-display {display: block; text-align: center; margin: 1em 0; padding: 0}
+.mjx-chtml[tabindex]:focus, body :focus .mjx-chtml[tabindex] {display: inline-table}
+.mjx-full-width {text-align: center; display: table-cell!important; width: 10000em}
+.mjx-math {display: inline-block; border-collapse: separate; border-spacing: 0}
+.mjx-math * {display: inline-block; -webkit-box-sizing: content-box!important; -moz-box-sizing: content-box!important; box-sizing: content-box!important; text-align: left}
+.mjx-numerator {display: block; text-align: center}
+.mjx-denominator {display: block; text-align: center}
+.MJXc-stacked {height: 0; position: relative}
+.MJXc-stacked > * {position: absolute}
+.MJXc-bevelled > * {display: inline-block}
+.mjx-stack {display: inline-block}
+.mjx-op {display: block}
+.mjx-under {display: table-cell}
+.mjx-over {display: block}
+.mjx-over > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-under > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-stack > .mjx-sup {display: block}
+.mjx-stack > .mjx-sub {display: block}
+.mjx-prestack > .mjx-presup {display: block}
+.mjx-prestack > .mjx-presub {display: block}
+.mjx-delim-h > .mjx-char {display: inline-block}
+.mjx-surd {vertical-align: top}
+.mjx-surd + .mjx-box {display: inline-flex}
+.mjx-mphantom * {visibility: hidden}
+.mjx-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 2px 3px; font-style: normal; font-size: 90%}
+.mjx-annotation-xml {line-height: normal}
+.mjx-menclose > svg {fill: none; stroke: currentColor; overflow: visible}
+.mjx-mtr {display: table-row}
+.mjx-mlabeledtr {display: table-row}
+.mjx-mtd {display: table-cell; text-align: center}
+.mjx-label {display: table-row}
+.mjx-box {display: inline-block}
+.mjx-block {display: block}
+.mjx-span {display: inline}
+.mjx-char {display: block; white-space: pre}
+.mjx-itable {display: inline-table; width: auto}
+.mjx-row {display: table-row}
+.mjx-cell {display: table-cell}
+.mjx-table {display: table; width: 100%}
+.mjx-line {display: block; height: 0}
+.mjx-strut {width: 0; padding-top: 1em}
+.mjx-vsize {width: 0}
+.MJXc-space1 {margin-left: .167em}
+.MJXc-space2 {margin-left: .222em}
+.MJXc-space3 {margin-left: .278em}
+.mjx-chartest {display: block; visibility: hidden; position: absolute; top: 0; line-height: normal; font-size: 500%}
+.mjx-chartest .mjx-char {display: inline}
+.mjx-chartest .mjx-box {padding-top: 1000px}
+.MJXc-processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MJXc-processed {display: none}
+.mjx-test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.mjx-test.mjx-test-display {display: table!important}
+.mjx-test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.mjx-test.mjx-test-default {display: block!important; clear: both}
+.mjx-ex-box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.mjx-test-inline .mjx-left-box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .mjx-right-box {display: inline-block; width: 0; float: right}
+.mjx-test-display .mjx-right-box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+#MathJax_CHTML_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.mjx-chtml .mjx-noError {line-height: 1.2; vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+.MJXc-TeX-unknown-R {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: normal}
+.MJXc-TeX-unknown-I {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: normal}
+.MJXc-TeX-unknown-B {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: bold}
+.MJXc-TeX-unknown-BI {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: bold}
+.MJXc-TeX-ams-R {font-family: MJXc-TeX-ams-R,MJXc-TeX-ams-Rw}
+.MJXc-TeX-cal-B {font-family: MJXc-TeX-cal-B,MJXc-TeX-cal-Bx,MJXc-TeX-cal-Bw}
+.MJXc-TeX-frak-R {font-family: MJXc-TeX-frak-R,MJXc-TeX-frak-Rw}
+.MJXc-TeX-frak-B {font-family: MJXc-TeX-frak-B,MJXc-TeX-frak-Bx,MJXc-TeX-frak-Bw}
+.MJXc-TeX-math-BI {font-family: MJXc-TeX-math-BI,MJXc-TeX-math-BIx,MJXc-TeX-math-BIw}
+.MJXc-TeX-sans-R {font-family: MJXc-TeX-sans-R,MJXc-TeX-sans-Rw}
+.MJXc-TeX-sans-B {font-family: MJXc-TeX-sans-B,MJXc-TeX-sans-Bx,MJXc-TeX-sans-Bw}
+.MJXc-TeX-sans-I {font-family: MJXc-TeX-sans-I,MJXc-TeX-sans-Ix,MJXc-TeX-sans-Iw}
+.MJXc-TeX-script-R {font-family: MJXc-TeX-script-R,MJXc-TeX-script-Rw}
+.MJXc-TeX-type-R {font-family: MJXc-TeX-type-R,MJXc-TeX-type-Rw}
+.MJXc-TeX-cal-R {font-family: MJXc-TeX-cal-R,MJXc-TeX-cal-Rw}
+.MJXc-TeX-main-B {font-family: MJXc-TeX-main-B,MJXc-TeX-main-Bx,MJXc-TeX-main-Bw}
+.MJXc-TeX-main-I {font-family: MJXc-TeX-main-I,MJXc-TeX-main-Ix,MJXc-TeX-main-Iw}
+.MJXc-TeX-main-R {font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw}
+.MJXc-TeX-math-I {font-family: MJXc-TeX-math-I,MJXc-TeX-math-Ix,MJXc-TeX-math-Iw}
+.MJXc-TeX-size1-R {font-family: MJXc-TeX-size1-R,MJXc-TeX-size1-Rw}
+.MJXc-TeX-size2-R {font-family: MJXc-TeX-size2-R,MJXc-TeX-size2-Rw}
+.MJXc-TeX-size3-R {font-family: MJXc-TeX-size3-R,MJXc-TeX-size3-Rw}
+.MJXc-TeX-size4-R {font-family: MJXc-TeX-size4-R,MJXc-TeX-size4-Rw}
+.MJXc-TeX-vec-R {font-family: MJXc-TeX-vec-R,MJXc-TeX-vec-Rw}
+.MJXc-TeX-vec-B {font-family: MJXc-TeX-vec-B,MJXc-TeX-vec-Bx,MJXc-TeX-vec-Bw}
+@font-face {font-family: MJXc-TeX-ams-R; src: local('MathJax_AMS'), local('MathJax_AMS-Regular')}
+@font-face {font-family: MJXc-TeX-ams-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_AMS-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-B; src: local('MathJax_Caligraphic Bold'), local('MathJax_Caligraphic-Bold')}
+@font-face {font-family: MJXc-TeX-cal-Bx; src: local('MathJax_Caligraphic'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-cal-Bw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Bold.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Bold.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-R; src: local('MathJax_Fraktur'), local('MathJax_Fraktur-Regular')}
+@font-face {font-family: MJXc-TeX-frak-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-B; src: local('MathJax_Fraktur Bold'), local('MathJax_Fraktur-Bold')}
+@font-face {font-family: MJXc-TeX-frak-Bx; src: local('MathJax_Fraktur'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-frak-Bw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Bold.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Bold.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-BI; src: local('MathJax_Math BoldItalic'), local('MathJax_Math-BoldItalic')}
+@font-face {font-family: MJXc-TeX-math-BIx; src: local('MathJax_Math'); font-weight: bold; font-style: italic}
+@font-face {font-family: MJXc-TeX-math-BIw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Math-BoldItalic.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Math-BoldItalic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-R; src: local('MathJax_SansSerif'), local('MathJax_SansSerif-Regular')}
+@font-face {font-family: MJXc-TeX-sans-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-B; src: local('MathJax_SansSerif Bold'), local('MathJax_SansSerif-Bold')}
+@font-face {font-family: MJXc-TeX-sans-Bx; src: local('MathJax_SansSerif'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-sans-Bw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Bold.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Bold.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-I; src: local('MathJax_SansSerif Italic'), local('MathJax_SansSerif-Italic')}
+@font-face {font-family: MJXc-TeX-sans-Ix; src: local('MathJax_SansSerif'); font-style: italic}
+@font-face {font-family: MJXc-TeX-sans-Iw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Italic.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Italic.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-script-R; src: local('MathJax_Script'), local('MathJax_Script-Regular')}
+@font-face {font-family: MJXc-TeX-script-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Script-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Script-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-type-R; src: local('MathJax_Typewriter'), local('MathJax_Typewriter-Regular')}
+@font-face {font-family: MJXc-TeX-type-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Typewriter-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Typewriter-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-R; src: local('MathJax_Caligraphic'), local('MathJax_Caligraphic-Regular')}
+@font-face {font-family: MJXc-TeX-cal-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-B; src: local('MathJax_Main Bold'), local('MathJax_Main-Bold')}
+@font-face {font-family: MJXc-TeX-main-Bx; src: local('MathJax_Main'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-main-Bw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Main-Bold.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-I; src: local('MathJax_Main Italic'), local('MathJax_Main-Italic')}
+@font-face {font-family: MJXc-TeX-main-Ix; src: local('MathJax_Main'); font-style: italic}
+@font-face {font-family: MJXc-TeX-main-Iw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Main-Italic.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-R; src: local('MathJax_Main'), local('MathJax_Main-Regular')}
+@font-face {font-family: MJXc-TeX-main-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-I; src: local('MathJax_Math Italic'), local('MathJax_Math-Italic')}
+@font-face {font-family: MJXc-TeX-math-Ix; src: local('MathJax_Math'); font-style: italic}
+@font-face {font-family: MJXc-TeX-math-Iw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Math-Italic.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size1-R; src: local('MathJax_Size1'), local('MathJax_Size1-Regular')}
+@font-face {font-family: MJXc-TeX-size1-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Size1-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size2-R; src: local('MathJax_Size2'), local('MathJax_Size2-Regular')}
+@font-face {font-family: MJXc-TeX-size2-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Size2-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size3-R; src: local('MathJax_Size3'), local('MathJax_Size3-Regular')}
+@font-face {font-family: MJXc-TeX-size3-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Size3-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size4-R; src: local('MathJax_Size4'), local('MathJax_Size4-Regular')}
+@font-face {font-family: MJXc-TeX-size4-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Size4-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-vec-R; src: local('MathJax_Vector'), local('MathJax_Vector-Regular')}
+@font-face {font-family: MJXc-TeX-vec-Rw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Vector-Regular.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Vector-Regular.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Vector-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-vec-B; src: local('MathJax_Vector Bold'), local('MathJax_Vector-Bold')}
+@font-face {font-family: MJXc-TeX-vec-Bx; src: local('MathJax_Vector'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-vec-Bw; src /*1*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/eot/MathJax_Vector-Bold.eot'); src /*2*/: url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Vector-Bold.woff') format('woff'), url('https://elab.cpe.ku.ac.th/elab/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Vector-Bold.otf') format('opentype')}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <div id="header">
+        <div class="info">
+          
+<div id="welcome">Welcome <b>ฐิติโชติ กิ่งไพบูลย์</b>
+[1.46.66.252]</div>
+
+          <div id="menu">
+            
+[<a href="https://elab.cpe.ku.ac.th/elab/lab/1248/">All labs</a>]
+
+
+
+
+[<a href="https://elab.cpe.ku.ac.th/elab/kusso/logout/">Log out</a>]
+
+
+
+          </div>
+	</div>
+        <h1>
+            
+
+            <a href="https://elab.cpe.ku.ac.th/elab/">E-Labsheet</a>
+            
+| <a href="https://elab.cpe.ku.ac.th/elab/lab/1248/">Computer Programming</a>
+
+        </h1>
+    </div>
+
+    
+
+
+    <!-- Content -->
+    <div id="content">
+        
+        
+<div id="container">
+  <div id="nav-links">
+  
+    <div id="lab-title" style="padding-bottom: 5px; padding-top: 10px;">
+      <div>
+        Lab 05:
+      </div>
+      <div>
+        C 113 Lab 5
+        
+          <span class="label label-warning">read-only</span>
+        
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13681">
+      <span style="color:blue">01 - Automorphic Number</span>
+      <div id="assignment-status-icon-13681" style="display: inline">
+        
+
+  
+    
+      <img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13597">
+      <span style="color:blue">02 - Pythagorean Triple</span>
+      <div id="assignment-status-icon-13597" style="display: inline">
+        
+
+  
+    
+      <img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task chosen" id="assignment-13683">
+      <span style="color:blue">03 - Calculator</span>
+      <div id="assignment-status-icon-13683" style="display: inline">
+        
+
+  
+    
+      <img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-15299">
+      <span style="color:blue">04 - The Value of PI</span>
+      <div id="assignment-status-icon-15299" style="display: inline">
+        
+
+  
+    
+      <img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-15300">
+      <span style="color:blue">05 - พิมพ์สามเหลี่ยมไปทางขวาด้วยอักขระ 2 ตัว</span>
+      <div id="assignment-status-icon-15300" style="display: inline">
+        
+
+  
+    
+      <img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13684">
+      <span style="color:blue">06 - Combine 2 Arrays</span>
+      <div id="assignment-status-icon-13684" style="display: inline">
+        
+
+  
+    
+      <img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13685">
+      <span style="color:blue">07 - Fill-in the 2D array</span>
+      <div id="assignment-status-icon-13685" style="display: inline">
+        
+
+  
+    
+      <img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    <div class="task" id="assignment-13687">
+      <span style="color:blue">08 - Climbing Ladder Simulator</span>
+      <div id="assignment-status-icon-13687" style="display: inline">
+        
+
+  
+    
+      <img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+
+
+
+      </div>
+    </div>
+    
+    
+    
+  
+  </div>
+
+  <div id="nav-content" style="display: table-cell; width: 1794.22px;">
+    <label id="toggle-sidebar" title="Toggle side bar" style="top: 35px;">&lt;|&gt;</label>
+    <div id="assignment">
+
+<div id="assignment-title" style="padding-top: 15px">
+  03 Calculator 
+</div>
+<div id="recent-submission-status-13683">
+  
+    
+
+<span style="padding-left:5px">Recent submission on 12:41 11 Jan 2024 
+<img src="./03 - Calculator_files/16-arrow-right.png">
+Result: 
+
+  
+    
+      PASSED<img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+  
+    <span title="P = Pass, - = Fail, S = Incorrect Spacing, C = Incorrect Case">
+      [PPPPPPP]
+    </span>
+    
+      <img class="result-details-icon" style="vertical-align:bottom; cursor: pointer" title="Explain results" src="./03 - Calculator_files/16-clipboard-audit.png" onclick="ElabClient.show_result_explanation(this,8037538)">
+    
+  
+
+  
+
+</span><br>
+
+  
+</div>
+<div id="submission-tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+  <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="current" aria-labelledby="ui-id-57" aria-selected="false" aria-expanded="false"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14815/#current" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-57"><span>Current</span></a></li>
+    <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="recent-13683" aria-labelledby="ui-id-58" aria-selected="true" aria-expanded="true"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14815/#recent-13683" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-58"><span>Recent</span></a></li>
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="ui-id-60" aria-labelledby="ui-id-59" aria-selected="false" aria-expanded="false"><a href="https://elab.cpe.ku.ac.th/elab/lab/submissions/1248/13683/" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-59"><span>All</span></a></li>
+  </ul>
+  <div id="current" aria-labelledby="ui-id-57" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+    <form method="post" action="https://elab.cpe.ku.ac.th/elab/lab/submit/1248/14815/13683/" enctype="multipart/form-data" autocomplete="off">
+      <div id="assignment-body">
+        <input type="hidden" name="csrfmiddlewaretoken" value="reZhN0Q4ijlNzWjXyaP9lcgUOOoCUsRejZLdpAbq2Ep7KJekGuOlanQBTkwBTi3l">
+        <h2>Calculator</h2>
+<p>Write the program that continuously asks for the operator (+, -, *, or /), and the operand (the next number), until the user enters a character other than the operator +, -, *, or /. <br>
+</p>
+<p>Each time the new number and the operator come in, the program computes and displays the present value by using the input operator, the last present value, and the newly-entered value.  At the end, the program also displays the final value, as shown in a sample output below. </p>
+<h2>Sample Output 1</h2>
+<p></p><pre class="output">Initial Value: <em>10.45</em><br>
+Operator: <em>+</em>
+Input Value: <em>4</em>
+Present Value is 14.4500<br>
+Operator: <em>-</em>
+Input Value: <em>0.33</em>
+Present Value is 14.1200<br>
+Operator: <em>*</em>
+Input Value: <em>12.5</em>
+Present Value is 176.5000<br>
+Operator: <em>/</em>
+Input Value: <em>5.5</em>
+Present Value is 32.0909<br>
+Operator: <em>@</em><br>
+Finish Calculation. Final Value is 32.0909
+</pre><p></p>
+<hr>
+<p>
+</p><fieldset>
+<pre><div class="code-menu"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14815/#" class="lineno-toggle">[hide line #]</a></div><code class="source"><textarea class="codeblank" cols="63" name="b1" rows="46" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea></code></pre>
+</fieldset>
+<p></p> 
+      </div>
+      
+      
+    </form>
+  </div>
+  <div id="recent-13683" class="recent ui-tabs-panel ui-corner-bottom ui-widget-content" aria-labelledby="ui-id-58" role="tabpanel" aria-hidden="false" style="">
+    
+      
+        
+<div id="id_submission_status_8037538" class="submission-status ui-corner-all">
+  Submitted on 12:41 11 Jan 2024 || 
+  Result: 
+
+  
+    
+      PASSED<img src="./03 - Calculator_files/16-em-check.png">
+     
+  
+  
+  
+    <span title="P = Pass, - = Fail, S = Incorrect Spacing, C = Incorrect Case">
+      [PPPPPPP]
+    </span>
+    
+      <img class="result-details-icon" style="vertical-align:bottom; cursor: pointer" title="Explain results" src="./03 - Calculator_files/16-clipboard-audit.png" onclick="ElabClient.show_result_explanation(this,8037538)">
+    
+  
+
+  
+
+
+  
+  
+  <button class="copy_to_current" href="" style="display: none;">Copy to current</button>
+
+</div>
+
+<div id="id_submission_8037538" class="submission-view" style="clear: both;">
+  <h2>Calculator</h2>
+<p>Write the program that continuously asks for the operator (+, -, *, or /), and the operand (the next number), until the user enters a character other than the operator +, -, *, or /. <br>
+</p>
+<p>Each time the new number and the operator come in, the program computes and displays the present value by using the input operator, the last present value, and the newly-entered value.  At the end, the program also displays the final value, as shown in a sample output below. </p>
+<h2>Sample Output 1</h2>
+<p></p><pre class="output">Initial Value: <em>10.45</em><br>
+Operator: <em>+</em>
+Input Value: <em>4</em>
+Present Value is 14.4500<br>
+Operator: <em>-</em>
+Input Value: <em>0.33</em>
+Present Value is 14.1200<br>
+Operator: <em>*</em>
+Input Value: <em>12.5</em>
+Present Value is 176.5000<br>
+Operator: <em>/</em>
+Input Value: <em>5.5</em>
+Present Value is 32.0909<br>
+Operator: <em>@</em><br>
+Finish Calculation. Final Value is 32.0909
+</pre><p></p>
+<hr>
+<p>
+</p><fieldset>
+<pre><div class="code-menu"><a href="https://elab.cpe.ku.ac.th/elab/lab/1248/14815/#" class="lineno-toggle">[hide line #]</a></div><code class="source"><textarea class="codeblank" cols="63" name="b1" rows="46" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">#include &lt;stdio.h&gt;
+
+int main(){
+    float value = 0, valInput = 0;
+    char opInput[1] = "";
+    printf("Initial Value: ");
+    scanf("%f", &amp;value);
+
+
+    while (1){
+        printf("\nOperator: ");
+        scanf("%s", opInput);
+        if (!(opInput[0] == '+' || opInput[0] == '-' || opInput[0] == '*' || opInput[0] == '/')) break;
+        printf("Input Value: ");
+        scanf("%f", &amp;valInput);
+
+        if (opInput[0] == '+') value += valInput;
+        else if (opInput[0] == '-') value -= valInput;
+        else if (opInput[0] == '*') value *= valInput;
+        else if (opInput[0] == '/') value /= valInput;
+
+        printf("Present Value is %.4f\n", value);
+        
+    }
+    printf("\nFinish Calculation. Final Value is %.4f", value);
+}</textarea></code></pre>
+</fieldset>
+<p></p>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $(".compiler-messages").click(function() {
+      $(this.parentNode.parentNode)
+        .find(".compiler-message-view")
+        .toggle();
+    });
+  });
+</script>
+
+      
+    
+  </div><div id="ui-id-60" aria-live="polite" aria-labelledby="ui-id-59" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"></div>
+  <div id="all">
+  </div>
+</div>
+<script>
+  function copy_submission_to_current(submission_id) {
+    $.getJSON(Urls["lab:copy-submission"](submission_id), 
+      function(items) {
+        for(var i=0; i<items.length; i++) {
+          // blanks can be either input or textarea
+          $("#assignment-body input[name=" + items[i].name + "]")
+            .val(items[i].value); 
+          $("#assignment-body textarea[name=" + items[i].name + "]")
+            .val(items[i].value); 
+        }
+        $("#submission-tabs").tabs({active:0});
+      });
+  }
+
+  function bind_copy_current_link(link_query, submission_id) {
+    $(link_query).click(function (event) {
+      event.preventDefault();
+      copy_submission_to_current(submission_id);
+    });
+  }
+
+  function refresh_grading_status(assignment_id, submission_id) {
+    $.getJSON(Urls["lab:get-submission-status"](submission_id), 
+      function(data) {
+        if(data.graded) {
+          if($("#recent-"+assignment_id).length!=0) {
+            $("#recent-submission-status-" + assignment_id).html(data.assignment_status);
+            $("#recent-" + assignment_id).html(data.submission);
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"recent-"+assignment_id]);
+
+            bind_copy_current_link("#submission-tabs #recent-" + assignment_id + " .copy_to_current", submission_id);
+	    
+          }
+          $("#assignment-status-icon-" + assignment_id).html(data.icon);
+
+          // Recreate manual score boxes (as they were overwritten by the
+          // above html() call), then update the scores
+          ElabClient.create_manual_score_boxes(
+            $("#recent-" + assignment_id),{readOnly:true});
+          ElabClient.update_manual_score_boxes(
+            $("#recent-" + assignment_id),data.manual_scores);
+        } else {
+          if($("#recent-"+assignment_id).length!=0)
+            // refresh only when the scheduled assignment is the current one
+            schedule_refresh(assignment_id, submission_id);
+        }
+      });
+  }
+
+  function schedule_refresh(assignment_id, submission_id) {
+    setTimeout(function () {
+        refresh_grading_status(assignment_id, submission_id);
+    }, 3000);
+  }
+
+  function add_code_menu() {
+    $("code.source").before('<div class="code-menu"><a href="#" class="lineno-toggle">[hide line #]</a></div>');
+    $(".lineno-toggle").click(function() {
+      $(this.parentNode.parentNode).find(".lineno").toggle();
+      if(this.innerHTML=='[hide line #]')
+        this.innerHTML = '[show line #]';
+      else
+        this.innerHTML = '[hide line #]';
+    });
+  }				    
+
+  $(document).ready(function() {
+    $("#submission-tabs").tabs({ spinner: ''});
+    add_code_menu();
+
+    
+      bind_copy_current_link("#submission-tabs #recent-13683 .copy_to_current",
+                             "8037538");
+      var $recent = $("div#recent-13683");
+      ElabClient.create_manual_score_boxes($recent,{readOnly:true});
+
+      
+        ElabClient.update_manual_score_boxes(
+          $recent,all_manual_scores[8037538]);
+      
+    
+    $(".codeblank").attr("autocomplete","off");
+    $(".codeblank").attr("autocorrect", "off");
+    $(".codeblank").attr("autocapitalize", "off");
+    $(".codeblank").attr("spellcheck", "false");
+    $("form").attr("autocomplete","off");
+    
+      $(".copy_to_current").hide();
+    
+    ElabClient.render_components(9169,14815);
+  });
+</script>
+</div>
+  </div>
+</div>
+
+        
+    </div>
+    <!-- END Content -->
+
+    
+
+<div id="footer" style="font-size: 70%; margin-top: 5px; padding-left: 5px; border-top: 1px lightgrey solid; color: grey;">
+Icons from <a href="http://sweetie.sublink.ca/">Sweetie</a>.
+</div>
+
+<script>
+  all_manual_scores = {"8013806": null, "8044103": null, "8037538": null, "8016323": null, "8044154": null, "8037848": null, "8038119": null, "8038934": null};
+  $task_form = $("div#current > form");
+  $task_form.areYouSure();
+</script>
+
+
+<!-- END Container -->
+
+
+
+</body></html>
